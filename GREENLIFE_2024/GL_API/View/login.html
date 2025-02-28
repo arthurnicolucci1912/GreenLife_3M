@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/csscadastro.css" />
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <title>GreenLife</title>
+    <!-- Adicionar FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form id="sign-in-form" class="sign-in-form">
+                    <h2 class="title">Entrar</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input id="sign-in-username" type="text" placeholder="Email" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input id="sign-in-password" type="password" placeholder="Senha" required />
+                    </div>
+                    <input type="submit" value="Entrar" class="btn solid" />
+                    <p class="social-text"></p>
+                    <div class="social-media"></div>
+                </form>
+                <form id="sign-up-form" class="sign-up-form">
+                    <h2 class="title">Cadastre-se</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input id="sign-up-username" type="text" placeholder="Nome" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input id="sign-up-email" type="email" placeholder="Email" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input id="sign-up-password" type="password" placeholder="Senha" required />
+                    </div>
+                    <input type="submit" class="btn" value="Cadastre-se" />
+                    <p class="social-text"></p>
+                    <div class="social-media"></div>
+                </form>
+            </div>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Novo aqui?</h3>
+                    <p>
+                        Se cadastre e venha fazer parte da melhor plataforma que auxilia você no seu plantio. Venha para nossa comunidade Greenlife!
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Cadastre-se
+                    </button>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Já possui conta?</h3>
+                    <p>
+                        Faça seu login e aproveite a melhor plataforma de auxílio de plantio!
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Entre
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../View/js/jscadastro.js"></script>
+</body>
+</html>

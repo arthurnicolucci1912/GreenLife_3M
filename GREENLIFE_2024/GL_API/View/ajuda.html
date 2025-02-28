@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../View/css/ajuda.css">
+    <link rel="stylesheet" href="../View/css/style.css">
+    <title>GreenLife</title>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2 class="green">GREEN<span class="danger">LIFE</span></h2>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="Plantio.html">
+                    <span class="material-symbols-outlined">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="pesquisa.html">
+                    <span class="material-symbols-outlined">search</span>
+                    <h3>Pesquisar</h3>
+                </a>
+                <a href="ajuda.html" class="active">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                    <h3>Ajuda</h3>
+                </a>
+                <a href="adicionar.html">
+                    <span class="material-symbols-outlined">edit</span>
+                    <h3>Adicionar</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <div class="container2">
+            <main2>
+                <div class="section">
+                    <h2>Ajuda</h2>
+                    <p>Bem-vindo ao Guia de Plantio GreenLife! Aqui você encontra dicas e orientações sobre o plantio de plantas, frutas e verduras.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Escolha do Local</h2>
+                    <p>Escolha um espaço que receba pelo menos 6 horas diárias de luz solar. A luz é essencial para a fotossíntese, o processo pelo qual as plantas produzem energia. Verifique se o solo no local é bem drenado e fértil; se necessário, incorpore matéria orgânica como compostagem.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Preparação do Solo</h2>
+                    <p>Solte o solo com uma pá para garantir que as raízes possam se espalhar. Adicione composto ou húmus de minhoca para melhorar a estrutura do solo e fornecer nutrientes essenciais. Teste o pH do solo, que deve ser ligeiramente ácido a neutro (pH 6-7) para a maioria das plantas.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Seleção das Plantas</h2>
+                    <p>Escolha plantas fáceis de cultivar, como tomate, alface, cenoura e ervas como manjericão e hortelã. Essas plantas são ótimas para iniciantes, proporcionando colheitas rápidas.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Plantio</h2>
+                    <p>Plante sementes a uma profundidade de duas a três vezes seu tamanho. Mudas devem ser bem regadas após o plantio para ajudar na adaptação ao novo ambiente. Dê espaço entre as plantas para evitar competição e melhorar a circulação de ar.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Rega</h2>
+                    <p>Mantenha o solo úmido, mas evite encharcá-lo. Plantas diferentes têm necessidades de água distintas; regar pela manhã ajuda a evitar evaporação rápida e a garantir que as plantas absorvam água ao longo do dia.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Adubação</h2>
+                    <p>Use adubos orgânicos ou fertilizantes específicos para plantas. Adube regularmente, seguindo as instruções do fabricante para evitar superdosagem. Considere a rotação de adubos para fornecer uma gama completa de nutrientes.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Controle de Pragas e Doenças</h2>
+                    <p>Utilize métodos naturais, como plantar alho ou calêndula para repelir pragas. Inspecione suas plantas regularmente e intervenha ao perceber sinais de infestação. Joaninhas são eficazes no controle de pulgões.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Poda e Manutenção</h2>
+                    <p>Remova folhas mortas para prevenir doenças. A poda melhora a circulação de ar e a exposição à luz solar. Use ferramentas limpas e afiadas e remova ervas daninhas que competem com as plantas.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Colheita</h2>
+                    <p>Colha verduras e frutas no momento certo para garantir o melhor sabor e nutrição. Por exemplo, alfaces devem ser colhidas jovens e tenras, enquanto tomates precisam estar maduros.</p>
+                </div>
+            </main2>
+        </div>
+        
+        <!-- Right Section Start -->
+        <div class="right">
+            <div class="top">
+                <button id="menu_bar">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="active"><i class='bx bx-sun'></i></span>
+                    <span><i class='bx bx-moon'></i></span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p><b>GreenLife</b></p>
+                        <p>Usuário</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="img/icon.jpg" alt="Profile Photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Section End -->
+        </div>
+    </div>
+</body>
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.querySelector('.theme-toggler');
+    
+            // Verifique o localStorage ao carregar a página
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme-variables');
+                themeToggle.querySelector('.bx-moon').parentElement.classList.add('active');
+                themeToggle.querySelector('.bx-sun').parentElement.classList.remove('active');
+            }
+    
+            // Altere o tema e salve a preferência do usuário no localStorage
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme-variables');
+    
+                const spans = themeToggle.querySelectorAll('span');
+                spans.forEach(span => span.classList.toggle('active'));
+    
+                // Salva a preferência do tema no localStorage
+                if (document.body.classList.contains('dark-theme-variables')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+</script>
+
+</html>

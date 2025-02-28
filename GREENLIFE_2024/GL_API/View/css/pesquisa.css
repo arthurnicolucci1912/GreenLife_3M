@@ -1,0 +1,904 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --clr-primary: #37b9b9;
+    --clr-danger: #27ae60;
+    --clr-success: #41f1b6;
+    --clr-white: #fff;
+    --clr-info-dark: #7d8da1;
+    --clr-info-light: #dce1eb;
+    --clr-dark: #363949;
+    --clr-warning: #ff4edc;
+    --clr-light: rgba(132, 139, 200, 0.18);
+    --clr-primary-variant: #111e88;
+    --clr-dark-variant: #767483;
+    --clr-color-background: #f6f6f9;
+    --clr-black-shadow: black;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 0 2rem 3rem var(--clr-info-light);
+}
+
+.dark-theme-variables {
+    --clr-color-background: #181a1e;
+    --clr-white: white;
+    --clr-light: rgba(0, 0, 0, 0.4);
+    --clr-dark: #edeffd;
+    --clr-dark-variant: #677483;
+    --box-shadow2: 0 2rem 3rem var(--clr-black-shadow);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 0;
+    list-style: none;
+    appearance: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow: hidden;
+    background: var(--clr-color-background);
+    transition: background 0.3s, color 0.3s;
+    height: 200vh; /* Aumenta a altura total do corpo */
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 14rem;
+    margin: 0 auto;
+    overflow: hidden;
+    position: fixed;
+}
+/*colocar isso na pagina adicionar*/
+.container2{
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    display: grid;
+    width: 3000px;
+    gap: 1.8rem;
+    grid-template-columns: 54rem auto 14rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+aside .top h2{
+    font-size: 1.39rem;
+}
+a {
+    color: var(--clr-dark);
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 0.88rem;
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+h4 {
+    font-size: 0.8rem;
+}
+
+h5 {
+    font-size: 0.77rem;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+.profile-photo img {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.text-muted {
+    color: var(--clr-info-dark);
+}
+
+p {
+    color: var(--clr-dark-variant);
+}
+
+b {
+    color: var(--clr-dark);
+}
+
+.primary {
+    color: var(--clr-primary);
+}
+
+.success {
+    color: var(--clr-success);
+}
+
+.danger {
+    color: var(--clr-danger);
+}
+
+.warning {
+    color: var(--clr-warning);
+}
+
+/* ASIDE */
+aside {
+    height: 100vh;
+}
+
+/* ASIDE */
+aside {
+    height: 100vh;
+}
+
+aside .top {
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.4rem;
+    margin-left: 26px;
+    width: 222px;
+}
+
+/* SIDEBAR */
+aside .sidebar {
+    background-color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    position: relative;
+    top: 1rem;
+    margin-left: 26px;
+    width: 222px;
+}
+
+aside h3 {
+    font-weight: 500;
+}
+.sidebar h3{
+    font-size: 0.88rem;
+}
+aside .sidebar a {
+    display: flex;
+    color: var(--clr-info-dark);
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    height: 3.2rem;
+    
+    transition: all 0.1s ease-in;
+}
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all 0.1s ease-in;
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 1rem;
+}
+
+aside .sidebar a.active {
+    background: var(--clr-light);
+    color: var(--clr-primary);
+    margin-left: 0;
+    border-left: 5px solid var(--clr-primary);
+}
+
+aside .sidebar a.active::before {
+    content: '';
+    width: 6px;
+    height: 100%;
+    background-color: var(--clr-primary);
+}
+
+aside .sidebar a:hover {
+    color: var(--clr-primary);
+}
+
+aside .sidebar a:hover span {
+    margin-left: 1rem;
+    transition: 0.4s ease-in;
+}
+
+aside .sidebar a span.msg_count {
+    background: var(--clr-danger);
+    color: var(--clr-white);
+    padding: 2px 5px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+/* Main Section Style */
+main {
+    margin-top: 1.4rem;
+    width: auto;
+    background-color: transparent;
+}
+
+main input {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    color: var(--clr-dark);
+}
+
+main .date {
+    display: inline-block;
+    background-color: var(--clr-white);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+}
+
+main .insights {
+    display: grid;  
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.6rem;
+}
+
+main .insights > div {
+    background-color: var(--clr-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+}
+
+main .insights > div:hover {
+    box-shadow: none;
+}
+
+main .insights > div span {
+    background: rgb(57, 236, 173);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--clr-white);
+    font-size: 2rem;
+}
+
+main .insights > div.expenses span {
+    background: var(--clr-danger);
+}
+
+main .insights > div.income span {
+    background: var(--clr-success);
+}
+
+main .insights > div .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .insights > div .middle h1 {
+    font-size: 1.6rem;
+}
+
+main h1 {
+    color: var(--clr-dark);
+}
+
+main .insights h1 {
+    color: var(--clr-dark);
+}
+
+main .insights h3 {
+    color: var(--clr-dark);
+}
+
+main .insights p {
+    color: var(--clr-danger);
+}
+
+main .insights .progress {
+    position: relative;
+    height: 68px;
+    width: 68px;
+    border-radius: 50%;
+}
+
+main .insights svg {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 0;
+}
+
+main table tbody tr {
+    height: 3.8rem;
+    border-bottom: 1px solid var(--clr-dark);
+    color: var(--clr-dark-variant);
+}
+
+main table tbody td {
+    height: 3.8rem;
+    border-bottom: 1px solid var(--clr-white);
+}
+
+main table tbody:child td {
+    border: none;
+}
+
+main .recent_order a {
+    text-align: center;
+    display: block;
+    margin: 1rem;
+}
+
+main table tbody tr {
+    height: 3.8rem;
+    border-bottom: 1px solid var(--clr-dark);
+    color: var(--clr-dark-variant);
+    transition: background-color 0.3s ease; 
+}
+
+main table tbody tr.clicked {
+    background-color: #e0f7fa; 
+}
+
+main table tbody tr:hover {
+    background-color: rgba(15, 82, 37, 0.678); 
+    color: white;
+}
+
+/*********
+ start right style */
+
+.right {
+    margin-top: 1.4rem;
+}
+
+.right p {
+    color: var(--clr-dark);
+    font-size: 0.88rem;
+}
+
+.right .top {
+    display: flex;
+    justify-content:center;
+    gap: 2rem;
+    position:absolute;
+    right: 1%;
+    top:4%;
+}
+
+.right .top button {
+    display: none;
+}
+
+.right .theme-toggler {
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.right .theme-toggler span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .theme-toggler span.active {
+    background-color: var(--clr-primary);
+    color: #fff;
+}
+
+.right .top .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+}
+
+.right .info h3 {
+    color: var(--clr-dark);
+}
+
+.right .item h3 {
+    color: var(--clr-dark);
+}
+.tema {
+    position: absolute;
+    top:0%;
+    left:80%;
+}
+
+/* Recent Updates */
+.right .recent_updates {
+    margin-top: 1rem;
+    margin-left: -20px;
+}
+
+.right .recent_updates .update {
+    background-color: var(--clr-white);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius-1);
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+}
+
+.right .recent_updates .update:hover {
+    box-shadow: none;
+}
+
+.right .recent_updates .update {
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Sales Analytics */
+.right .sales_analytics {
+    margin-top: 2rem;
+}
+
+.right .sales_analytics .item {
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 10px 0;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+}
+
+.right .sales_analytics .item:hover {
+    box-shadow: none;
+}
+
+.right .sales_analytics .item .icon {
+    background: coral;
+    padding: 0.6rem;
+    color: var(--clr-white);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.right .sales_analytics .item:nth-child(3) .icon {
+    background-color: var(--clr-success);
+}
+
+.right .sales_analytics .item:nth-child(4) .icon {
+    background-color: var(--clr-danger);
+}
+
+.add_products div {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed;
+    color: var(--clr-dark-variant);
+    margin-bottom: 40px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 120px) {
+    .container {
+        width: 94%;
+        grid-template-columns: 7rem auto 14rem;
+    }
+    aside .sidebar h3 {
+        display: none;
+    }
+    aside .sidebar a:last-child {
+        position: relative;
+        margin-top: 1.8rem;
+    }
+    main .insights {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    aside {
+        position: fixed;
+        width: 10rem;
+        z-index: 3;
+        background: var(--clr-white);
+        display: none;
+        left: -100px;
+        animation: menuAni 1s forwards;
+    }
+
+    @keyframes menuAni {
+        to {
+            left: 0;
+        }
+    }
+    
+    aside .logo h2 {
+        display: inline;
+    }
+    aside .sidebar h3 {
+        display: inline;
+    }
+    aside .sidebar a {
+        width: 100%;
+        height: 3.4rem;
+    } 
+
+    aside .top div.close span {
+        display: inline;
+        position: absolute;
+        right: 0;
+        margin-right: 30px;
+        font-size: 35px;
+    }
+
+    .right .top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: fixed;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.8rem;
+        background: var(--clr-white);
+        width: 100%;
+        height: 4.6rem;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--box-shadow);
+        margin: 0;
+    }
+
+    main .insights {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.6rem;
+        padding: 40px;
+    }
+
+    main .recent_order {
+        padding: 30px;
+        margin: 0 auto;
+    }
+    .right .profile {
+        position: absolute;
+        left: 70%;
+    }
+
+    .right .recent_updates {
+        padding: 30px;
+    }
+    .right .sales_analytics {
+        padding: 30px;
+    }
+
+    .add_products {
+        padding: 30px;
+    }
+    .right .top button {
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--clr-dark);
+        position: absolute;
+        left: 1rem;
+    }
+}
+@media screen and (min-width: 1920px) and (min-height: 1080px) {
+    body {
+        font-size: 1rem; /* Aumentando o tamanho da fonte para melhor visibilidade */
+    }
+
+    .container {
+        width: 90%; /* Ajustando a largura para ocupar mais da tela */
+        gap: 2rem; /* Aumentando o espaço entre os elementos */
+    }
+
+    .insights {
+        grid-template-columns: repeat(4, 1fr); /* Expansão para acomodar mais colunas */
+    }
+
+    .insights > div {
+        padding: 2.5rem; /* Aumentando o padding para dar mais espaço nos cards */
+    }
+
+    aside .sidebar a {
+        height: 3.6rem; /* Aumentando a altura dos links para melhorar a acessibilidade */
+    }
+
+    main h1, main h2, main h3, main h4, main h5, aside h3, .right h2, .right h3 {
+        font-size: 1.2rem; /* Ampliando os títulos para uma melhor leitura em alta resolução */
+    }
+
+    .right .sales_analytics .item {
+        padding: 2rem; /* Aumentando o padding para consistência visual */
+    }.tema {
+    position: absolute;
+    top:0%;
+    left:74%;
+}
+
+    .recent_order table {
+        padding: 2rem; /* Aumentando o padding da tabela */
+    }
+
+    /* Ajuste na largura das colunas da tabela */
+    main .recent_order table {
+        table-layout: fixed;
+    }
+
+    /* Ajuste de ícones e imagens para manter a proporção em resolução 1080p */
+    .profile-photo img {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .right .sales_analytics .item .icon {
+        height: 60px;
+        width: 60px;
+        font-size: 1.8rem;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo dos itens de planta */
+.planta-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.planta-item img {
+    border-radius: 5px;
+    margin: 10px;
+    width: 100%;
+    max-width: 150px; /* Diminuído de 200px */
+    height: auto;
+}
+
+.planta-item h3 {
+    font-size: 1.1em; /* Ajustado para ser um pouco menor */
+    margin-bottom: 10px;
+}
+
+.planta-item p {
+    padding-left: 15px;
+    margin: 5px 0;
+    font-size: 0.9em; /* Ajustado para um tamanho menor */
+    color: #333;
+}
+
+/* Responsividade da barra de pesquisa */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin: 10px; /* Reduzido para tornar mais compacto */
+    max-width: 400px; /* Limita a largura total da barra */
+}
+
+.search-container input {
+    flex: 1;
+    padding: 6px; /* Reduzido para dar mais leveza */
+    font-size: 0.85em; /* Reduzido para combinar com o novo tamanho */
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 6px 10px; /* Reduzido para acompanhar o input */
+    font-size: 0.85em;
+    border: none;
+    background-color: #27ae60;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.search-container .search-icon {
+    margin-right: 6px;
+    color: #27ae60;
+    font-size: 1em; /* Reduzido para ser mais discreto */
+}
+
+/* Ajuste de imagens do rodapé */
+.footer-banner,
+.footer-image2 {
+    max-width: 80%; /* Reduzido para dar mais espaço */
+    height: auto;
+    margin: 10px auto;
+    display: block;
+}
+.resultados-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.planta-item {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f900;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.planta-item img {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.planta-item h3 {
+    font-size: 1.2em;
+    color: #27ae60;
+}
+
+.planta-item p {
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--clr-dark);
+}
+
+.dark-theme-variables .planta-item p{
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+}
+
+body {
+    font-size: 1rem; /* Tamanho de fonte para melhor legibilidade em 1980px */
+}
+
+.container {
+    width: 90%; /* Ajustado para 90% da largura da tela */
+    margin: 0 auto; /* Centraliza o container */
+    gap: 1.8rem; /* Espaço entre os elementos */
+    display: grid;
+    grid-template-columns: 14rem auto 14rem; /* Define a estrutura de colunas */
+}
+
+/* Aumentar tamanhos de fonte para cabeçalhos */
+h1 {
+    font-size: 2rem; /* Tamanho do título principal */
+}
+
+h2 {
+    font-size: 1.6rem; /* Tamanho do subtítulo */
+}
+
+h3 {
+    font-size: 1rem; /* Tamanho do subtítulo menor */
+}
+
+/* Sidebar */
+aside {
+    height: 100vh; /* Sidebar ocupa 100% da altura da tela */
+}
+
+aside .sidebar {
+    height: 85vh; /* Sidebar com altura ajustada */
+}
+
+/* Ajustes de layout principal */
+main {
+    margin-top: 1.4rem;
+    width: auto; /* Permite que o main utilize toda a largura disponível */
+}
+
+/* Ajustes na tabela de recentes */
+main .recent_order table {
+    width: 100%; /* A tabela ocupa toda a largura do container */
+}
+
+/* Media Queries */
+@media (max-width: 1980px) {
+    /* Ajustes adicionais se necessário */
+}
+
+@media (max-width: 120px) {
+    .container {
+        grid-template-columns: 1fr; /* Ajusta para uma coluna única em telas menores */
+    }
+
+    aside {
+        display: none; /* Oculta o sidebar em telas menores */
+    }
+}
+

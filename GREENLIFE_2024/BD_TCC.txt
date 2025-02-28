@@ -1,0 +1,149 @@
+Banco de dados GreenLife
+------------------------
+Cadastro: 
+
+-- Criar o banco de dados
+CREATE DATABASE GL_BD;
+GO
+
+-- Usar o banco de dados criado
+USE GL_BD;
+GO
+
+-- Criar a tabela Cadastro
+CREATE TABLE [dbo].[Cadastro] (
+    [Id]    INT            IDENTITY (1, 1) NOT NULL,
+    [Nome]  VARCHAR (100) NOT NULL,
+    [Email] VARCHAR (100) UNIQUE NOT NULL,
+    [Senha] VARCHAR (100) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+GO
+--Criar a tabela Admin
+CREATE TABLE [dbo].[Admin] (
+    [Id]    INT            IDENTITY (1, 1) NOT NULL,
+    [Nome]  NVARCHAR (100) NOT NULL,
+    [Email] NVARCHAR (100) UNIQUE NOT NULL,
+    [Senha] NVARCHAR (100) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+------------------------
+
+GreenLife :
+CREATE TABLE [dbo].[Plantio] (
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [NomePlantio]  VARCHAR (100) NOT NULL,
+    [DataPlantio]  DATE      NOT NULL,
+    [Tipo]         VARCHAR (100) NOT NULL,
+    [Semente]      VARCHAR (100) NOT NULL,
+    [Local]        VARCHAR (100) NOT NULL,
+    [DataColheita] DATE      NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+-------------------------
+
+Criar tabela para pesquisa de Plantas:
+
+CREATE TABLE [dbo].[Plantas] (
+    [Id]            INT             IDENTITY (1, 1) NOT NULL,
+    [Nome]          NVARCHAR (255)  NOT NULL,
+    [Imagem]        VARBINARY (MAX) NULL,
+    [ComoPlantar]   NVARCHAR (MAX)  NULL,
+	[Tipo]   NVARCHAR (MAX)  NULL,
+	[Semente]   NVARCHAR (MAX)  NULL,
+    [Preciso]       NVARCHAR (MAX)  NULL,
+    [Recomendacoes] NVARCHAR (MAX)  NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+--------------------------
+Insert para Plantas e pesquisas: 
+INSERT INTO Plantas (Nome, Imagem, ComoPlantar, Tipo, Semente, Preciso, Recomendacoes)
+VALUES
+('Tomate', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Tomate.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico em nutrientes.', 'Fruta', 'Mudas', 'Regar a cada dois dias', 'Colheita em 60 dias'),
+('Cebola', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Cebola.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e drenado.', 'Hortaliça', 'Bulbos', 'Regar diariamente', 'Colheita em 90 dias'),
+('Alface', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Alface.jpg', SINGLE_BLOB) AS Imagem), 'Solo leve e rico em matéria orgânica.', 'Hortaliça', 'Sementes pequenas', 'Regar regularmente', 'Colheita em 30 dias'),
+('Berinjela', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Beringela.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e bem drenado.', 'Fruta', 'Sementes', 'Regar a cada três dias', 'Colheita em 70 dias'),
+('Pimentão', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Pimentao.jpg', SINGLE_BLOB) AS Imagem), 'Solo bem drenado e rico.', 'Fruta', 'Sementes', 'Regar regularmente', 'Colheita em 80 dias'),
+('Cenoura', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Cenoura.jpg', SINGLE_BLOB) AS Imagem), 'Solo solto e arenoso.', 'Vegetal', 'Sementes', 'Regar diariamente', 'Colheita em 75 dias'),
+('Rabanete', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Rabanete.jpg', SINGLE_BLOB) AS Imagem), 'Solo leve e bem drenado.', 'Vegetal', 'Sementes', 'Regar regularmente', 'Colheita em 30 dias'),
+('Pepino', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Pepino.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico em nutrientes.', 'Fruta', 'Sementes', 'Regar a cada dois dias', 'Colheita em 60 dias'),
+('Beterraba', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Beterraba.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico em matéria orgânica.', 'Vegetal', 'Sementes', 'Regar regularmente', 'Colheita em 60 dias'),
+('Abobrinha', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Abobrinha.jpg', SINGLE_BLOB) AS Imagem), 'Solo leve e fértil.', 'Fruta', 'Sementes', 'Regar regularmente', 'Colheita em 50 dias'),
+('Couve', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Couve.jpg', SINGLE_BLOB) AS Imagem), 'Solo bem drenado e rico.', 'Hortaliça', 'Sementes', 'Regar diariamente', 'Colheita em 60 dias'),
+('Brócolis', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Brocolis.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e drenado.', 'Hortaliça', 'Mudas', 'Regar a cada três dias', 'Colheita em 90 dias'),
+('Cebolinha', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Cebolinha.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e drenado.', 'Hortaliça', 'Mudas', 'Regar diariamente', 'Colheita em 60 dias'),
+('Salsa', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Salsa.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico em matéria orgânica.', 'Hortaliça', 'Sementes pequenas', 'Regar regularmente', 'Usar cobertura morta'),
+('Coentro', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Coentro.jpg', SINGLE_BLOB) AS Imagem), 'Solo bem drenado e fértil.', 'Hortaliça', 'Sementes pequenas', 'Regar diariamente', 'Colheita rápida em 30 dias'),
+('Chuchu', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Chuchu.jpg', SINGLE_BLOB) AS Imagem), 'Solo leve e bem drenado.', 'Vegetal', 'Sementes médias', 'Regar regularmente', 'Colheita em 90 dias'),
+('Cenoura Roxa', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Cenouraroxa.jpg', SINGLE_BLOB) AS Imagem), 'Solo solto e arenoso.', 'Vegetal', 'Sementes pequenas', 'Regar regularmente', 'Manter solo úmido'),
+('Agrião', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Agriao.jpg', SINGLE_BLOB) AS Imagem), 'Solo úmido e rico.', 'Hortaliça', 'Sementes pequenas', 'Regar diariamente', 'Colheita em 30 dias'),
+('Cebola Roxa', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Cebolaroxa.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e bem drenado.', 'Hortaliça', 'Bulbos', 'Regar diariamente', 'Colheita em 90 dias'),
+('Jiló', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Jilo.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico em nutrientes.', 'Vegetal', 'Sementes pequenas', 'Regar a cada dois dias', 'Proteger contra pragas'),
+('Rúcula', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Rucula.jpg', SINGLE_BLOB) AS Imagem), 'Solo leve e rico em nutrientes.', 'Hortaliça', 'Sementes pequenas', 'Regar regularmente', 'Colheita em 30 dias'),
+('Couve-flor', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Couveflor.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e bem drenado.', 'Hortaliça', 'Mudas', 'Regar diariamente', 'Colheita em 60 dias'),
+('Nabo', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Nabo.jpg', SINGLE_BLOB) AS Imagem), 'Solo leve e bem drenado.', 'Vegetal', 'Sementes pequenas', 'Regar regularmente', 'Colheita em 90 dias'),
+('Milho', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Milho.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico em nutrientes.', 'Vegetal', 'Sementes', 'Regar a cada dois dias', 'Colheita em 100 dias'),
+('Batata Doce', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Batatadoce.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e bem drenado.', 'Vegetal', 'Mudas', 'Regar diariamente', 'Colheita em 120 dias'),
+('Mandioca', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Mandioca.jpg', SINGLE_BLOB) AS Imagem), 'Solo bem drenado.', 'Vegetal', 'Mudas', 'Regar a cada três dias', 'Colheita em 150 dias'),
+('Pereira', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Pereira.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e bem drenado.', 'Fruta', 'Mudas', 'Regar regularmente', 'Colheita em 3 anos'),
+('Laranja', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Laranja.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico em nutrientes.', 'Fruta', 'Mudas', 'Regar diariamente', 'Colheita em 2 anos'),
+('Limão', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Limao.jpg', SINGLE_BLOB) AS Imagem), 'Solo leve e bem drenado.', 'Fruta', 'Mudas', 'Regar regularmente', 'Colheita em 1 ano'),
+('Maçã', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Maça.jpg', SINGLE_BLOB) AS Imagem), 'Solo rico e bem drenado.', 'Fruta', 'Mudas', 'Regar regularmente', 'Colheita em 3-4 anos'),
+('Uva', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Uva.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e bem drenado.', 'Fruta', 'Mudas', 'Regar regularmente', 'Colheita em 3 anos'),
+('Caju', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Caju.jpg', SINGLE_BLOB) AS Imagem), 'Solo arenoso e bem drenado.', 'Fruta', 'Mudas', 'Regar a cada dois dias', 'Colheita em 3 anos'),
+('Coco', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Coco.jpg', SINGLE_BLOB) AS Imagem), 'Solo arenoso e úmido.', 'Fruta', 'Mudas', 'Regar regularmente', 'Colheita em 5 anos'),
+('Abacate', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Abacate.jpg', SINGLE_BLOB) AS Imagem), 'Solo bem drenado.', 'Fruta', 'Mudas', 'Regar diariamente', 'Colheita em 3-4 anos'),
+('Framboesa', (SELECT BulkColumn FROM OPENROWSET(BULK N'D:\PEN_INJUSTO\DS3\_TCC\_TCC_projeto\GreenLife\GL_API\View\img\Plantas\Framboesa.jpg', SINGLE_BLOB) AS Imagem), 'Solo fértil e úmido.', 'Fruta', 'Mudas', 'Regar regularmente', 'Colheita em 1-2 anos');
+
+ Nomes dos plantios: Aqui está a lista completa de todos os nomes dos plantios:
+
+Tomate
+Cebola
+Alface
+Berinjela
+Pimentão
+Cenoura
+Rabanete
+Pepino
+Beterraba
+Abobrinha
+Couve
+Brócolis
+Cebolinha
+Salsa
+Coentro
+Chuchu
+Cenoura Roxa
+Agrião
+Cebola Roxa
+Jiló
+Rúcula
+Couve-flor
+Nabo
+Milho
+Batata Doce
+Mandioca
+Pereira
+Laranja
+Limão
+Maçã
+Uva
+Caju
+Coco
+Abacate
+Framboesa
+-----------------------------
+
+ALTER TABLE [dbo].[Plantio]
+ADD [CadastroId] INT NOT NULL;
+
+ALTER TABLE [dbo].[Plantio]
+ADD CONSTRAINT FK_Plantio_Cadastro
+FOREIGN KEY ([CadastroId]) REFERENCES [dbo].[Cadastro]([Id]);
+
+
+

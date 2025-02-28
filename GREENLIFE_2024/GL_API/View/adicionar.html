@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../View/css/style.css">
+    <link rel="stylesheet" href="../View/css/form.css">
+    <link rel="stylesheet" href="../View/css/adicionar.css">
+    <title>GreenLife</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2>GREEN<span class="danger">LIFE</span></h2>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="Plantio.html">
+                    <span class="material-symbols-outlined">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="pesquisa.html">
+                    <span class="material-symbols-outlined">search</span>
+                    <h3>Pesquisar</h3>
+                </a>
+                <a href="ajuda.html">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                    <h3>Ajuda</h3>
+                </a>
+                <a href="adicionar.html" class="active">
+                    <span class="material-symbols-outlined">edit</span>
+                    <h3>Adicionar</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+    </div>
+        <!-- Aside End -->
+        <!-- Falta colocar container aqui igual na pagina ajuda, dps vc add no css tbm-->
+        <!-- Main Section Start -->
+      <div class="container2">
+        <main>
+            <div class="insights">
+
+                <div class="sales">
+                    <h2>Adicionar Plantio</h2>
+                    <!-- Formulário -->
+                    <form id="addPlantioForm">
+                        <div>
+                            <label for="addNomePlantio">Nome do Plantio:</label>
+                            <input type="text" id="addNomePlantio" required>
+                        </div>
+                        <div>
+                            <label for="addData">Data:</label>
+                            <input type="date" id="addData"  required>
+                        </div>
+                        <div>
+                            <label for="addTipo">Tipo:</label>
+                            <input type="text" id="addTipo" required>
+                        </div>
+                        <div>
+                            <label for="addSemente">Semente:</label>
+                            <input type="text" id="addSemente" required>
+                        </div>
+                        <div>
+                            <label for="addLocal">Local:</label>
+                            <input type="text" id="addLocal" required>
+                        </div>
+                        <div>
+                            <label for="addColheita">Colheita:</label>
+                            <input type="date" id="addColheita"  required>
+                        </div>
+                        <button type="submit">Adicionar Plantio</button>
+                    </form>
+                </div>
+                <!-- end sales -->
+
+                <div class="expenses">
+                    <h2>Atualizar Plantio</h2>
+                    <form id="updatePlantioForm" class="theme-form">
+                        <div>
+                            <label for="updateId">ID do Plantio:</label>
+                            <input type="number" id="updateId" required>
+                        </div>
+                        <div>
+                            <label for="updateNomePlantio">Nome do Plantio:</label>
+                            <input type="text" id="updateNomePlantio" required>
+                        </div>
+                        <div>
+                            <label for="updateDataPlantio">Data:</label>
+                            <input type="date" id="updatePlantio"  required>
+                        </div>
+                        <div>
+                            <label for="updateTipo">Tipo:</label>
+                            <input type="text" id="updateTipo" required>
+                        </div>
+                        <div>
+                            <label for="updateSemente">Semente:</label>
+                            <input type="text" id="updateSemente" required>
+                        </div>
+                        <div>
+                            <label for="updateLocal">Local:</label>
+                            <input type="text" id="updateLocal" required>
+                        </div>
+                        <div>
+                            <label for="updateDataColheita">Colheita:</label>
+                            <input type="date" id="updateColheita"  required>
+                        </div>
+                        <button type="submit">Atualizar Plantio</button>
+                    </form>
+                </div>
+                </div>
+                </div>
+                <!-- end expenses -->
+
+                <!-- start status -->
+                 <div class="container-excluir">
+                <div class="status" >
+                    
+                    <form id="deletePlantioForm"  class="theme-form" style="border-radius: 7%;">
+                        <h2>Excluir Plantio</h2>
+                        <br>
+                        
+                        <label for="deleteId"></label>
+                        <input type="number" id="deleteId" placeholder="ID do Plantio:" required><br>
+                        <button type="submit">Excluir Plantio</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- Main Section End -->
+
+        <!-- Right Section Start -->
+    <div class="tema">
+       <div class="right">
+            <div class="top">
+                <button id="menu_bar">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="active"><i class='bx bx-sun'></i></span>
+                    <span><i class='bx bx-moon'></i></span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p><b>GreenLife</b></p>
+                        <p>Usuário</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="img/icon.jpg" alt="Profile Photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Right Section End -->
+    </div>
+    <script src="js/plantio.js"></script>
+   <script src="js/script.js"></script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('.theme-toggler');
+
+        // Verifique o localStorage ao carregar a página
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme-variables');
+            themeToggle.querySelector('.bx-moon').parentElement.classList.add('active');
+            themeToggle.querySelector('.bx-sun').parentElement.classList.remove('active');
+        }
+
+        // Altere o tema e salve a preferência do usuário no localStorage
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme-variables');
+
+            const spans = themeToggle.querySelectorAll('span');
+            spans.forEach(span => span.classList.toggle('active'));
+
+            // Salva a preferência do tema no localStorage
+            if (document.body.classList.contains('dark-theme-variables')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    });
+</script>
+</body>
+</html>
+   

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <title>GreenLife</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Aside section start -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2>GREEN<span class="danger">LIFE</span></h2>
+                </div>
+            
+            </div>
+            <!-- end top -->
+
+            <div class="sidebar">
+                <a href="plantioAdmin.html" class="active">
+                    <span class="material-symbols-outlined">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="users.html">
+                    <span class="material-symbols-outlined">person</span>
+                    <h3>Usuários</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- Aside End -->
+
+        <!-- Main Section Start -->
+        <main>
+            <h1>Dashboard</h1>
+
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <!-- start sales -->
+                <div class="sales">
+                    <span class="material-symbols-outlined">trending_up</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>QTD Plantios</h3>
+                            <h1 id="totalPlantios">0</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle r="30" cy="40" cx="40"></circle>
+                            </svg>
+                            <div class="number" id="percentPlantios">0%</div>
+                        </div>
+                    </div>
+                    <small>Últimas 24 Horas</small>
+                </div>
+                <!-- end sales -->
+
+                <!-- start expenses -->
+                <div class="expenses">
+                    <span class="material-symbols-outlined">timer</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Colheita</h3>
+                            <h1 id="colheitaDays">0 dias</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle r="30" cy="40" cx="40"></circle>
+                            </svg>
+                            <div class="number" id="percentColheita">0%</div>
+                        </div>
+                    </div>
+                    <small>Últimas 24 Horas</small>
+                </div>
+                <!-- end expenses -->
+
+                <!-- start status --> 
+                 <!-- Definir uso para essa div -->
+                <div class="status">
+                    <span class="material-symbols-outlined">stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Status</h3>
+                            <h1 id="statusDays">0 dias</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle r="30" cy="40" cx="40"></circle>
+                            </svg>
+                            <div class="number" id="percentStatus">0%</div>
+                        </div>
+                    </div>
+                    <small>Últimas 24 Horas</small>
+                </div>
+                <!-- end status -->
+            </div>
+            <!-- end insights -->
+
+            <!-- start recent order -->
+            <div class="recent_order">
+                <h1>Plantios Recentes</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome do Plantio</th>
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>Tipo</th>
+                            <th>Semente</th>
+                            <th>Local</th>
+                            <th>Colheita</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plantioTableBody">
+                        <!-- Plantios serão adicionados aqui -->
+                    </tbody>
+                </table>
+            </div>       
+            <!-- end recent order -->
+        </main>
+        <!-- Main Section End -->
+
+        <!-- Right Section Start -->
+        <div class="right">
+            <div class="top">
+                <button id="menu_bar">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="active"><i class='bx bx-sun'></i></span>
+                    <span><i class='bx bx-moon'></i></span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p><b>GreenLife</b></p>
+                        <p>Admin</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="img/icon.jpg" alt="Profile Photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- end top -->
+           
+          
+            <!-- <div class="recent_updates">
+                <h2>Recent Update</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="img/BACK.jpg" alt="Update Photo">
+                        </div>
+                        <div class="message">
+                            <p><b>Plantio</b> Foi adicionado</p>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="img/BACK.jpg" alt="Update Photo">
+                        </div>
+                        <div class="message">
+                            <p><b>Plantio</b> Foi adicionado</p>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="img/BACK.jpg" alt="Update Photo">
+                        </div>
+                        <div class="message">
+                            <p><b>Plantio</b> Foi adicionado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ -->
+            <!-- <div class="item add_products">
+                <div>
+                    <span class="material-symbols-sharp">+</span>
+                </div> 
+             </div> -->
+        </div>
+        <!-- Right Section End -->
+    </div>
+    
+
+    <script src="js/app.js"></script>
+    <script src="js/plantio.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.querySelector('.theme-toggler');
+    
+            // Verifique o localStorage ao carregar a página
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme-variables');
+                themeToggle.querySelector('.bx-moon').parentElement.classList.add('active');
+                themeToggle.querySelector('.bx-sun').parentElement.classList.remove('active');
+            }
+    
+            // Altere o tema e salve a preferência do usuário no localStorage
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme-variables');
+    
+                const spans = themeToggle.querySelectorAll('span');
+                spans.forEach(span => span.classList.toggle('active'));
+    
+                // Salva a preferência do tema no localStorage
+                if (document.body.classList.contains('dark-theme-variables')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

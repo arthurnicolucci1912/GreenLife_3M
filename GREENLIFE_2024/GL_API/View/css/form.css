@@ -1,0 +1,82 @@
+/* Estilo geral dos formulários */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--clr-light, #ccc);
+    border-radius: 8px;
+    background-color: var(--clr-white, #f9f9f9);
+    box-shadow: var(--box-shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Estilo dos rótulos */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--clr-dark, #333);
+}
+
+/* Estilo dos campos de entrada */
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid var(--clr-light, #ddd);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--clr-white, #fff);
+    color: var(--clr-dark, #333);
+}
+
+/* Estilo dos botões */
+form button {
+    background-color: #4CAF50; /* Cor verde fixa */
+    color: white; /* Cor do texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Remove a alteração de cor ao passar o mouse */
+form button:hover {
+    background-color: #45a049; /* Cor de hover verde */
+}
+
+/* Variáveis para o tema escuro */
+.dark-theme-variables {
+    --clr-color-background: #181a1e; 
+    --clr-color-black:black;/* Cor de fundo */
+    --clr-white: #202528; /* Cor de fundo dos formulários */
+    --clr-light: rgba(255, 255, 255, 0.1); /* Cor clara */
+    --clr-dark: #edeffd; /* Cor dos textos */
+    --clr-dark-variant: #677483; /* Cor para botões e elementos destacados */
+    --box-shadow: 0 2rem 3rem var(--clr-color-black); /* Sombra */
+}
+
+/* Estilo para o botão de troca de tema */
+.theme-toggler {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.theme-toggler span {
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.theme-toggler span.active {
+    font-weight: bold; /* Para destacar o tema ativo */
+}
+
+/* Estilos adicionais para o tema escuro */
+body.dark-theme-variables {
+    background-color: var(--clr-color-background);
+    color: var(--clr-dark);
+}

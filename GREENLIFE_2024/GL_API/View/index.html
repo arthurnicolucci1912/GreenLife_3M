@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLife</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="./libs/rain.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="./js/app.js" defer></script>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <!-- Header com menu e logo -->
+    <header class="header">
+        <div class="logo">GreenLife</div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="login.html">Entrar</a></li>
+                <li class="search-container">
+         
+                    <div class="search-bar">
+                        <input type="text" placeholder="Pesquisar...">
+                    </div>
+                </li>
+             
+            </ul>
+        </nav>
+        </header>
+    </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <div class="close-icon">✕</div>
+        <ul class="sidebar-menu">
+            <li><a href="#"><img src="img/forum-icon.png" alt="Fórum"> Fórum</a></li>
+            <li><a href="#"><img src="img/contact-icon.png" alt="Contato"> Contato</a></li>
+            <li><a href="#"><img src="img/reports-icon.png" alt="Reportes"> Reportes</a></li>
+        </ul>
+    </aside>
+
+    <section class="layers">
+        <div class="layers__container">
+            <div class="layers__item layer-1" style="background-image: url('./img/layer-1.jpg');"></div>
+            <div class="layers__item layer-2" style="background-image: url('./img/layer-2.png');"></div>
+            <div class="layers__item layer-3">
+                <div class="hero-content">
+                    <h1><span>GreenLife</span></h1>
+                    <div class="hero-content__text">
+                        O Software que lhe auxilia no controle do plantio
+                    </div>
+                </div>
+            </div>
+            <div class="layers__item layer-4">
+                <canvas class="rain"></canvas>
+            </div>
+            <div class="layers__item layer-5" style="background-image: url('./img/layer-5.png');"></div>
+            <div class="layers__item layer-6" style="background-image: url('./img/layer-6.png');"></div>
+        </div>
+    </section>
+
+    <!-- Sections for scroll animation -->
+    <section class="content-section section-1" data-aos="fade-up">
+        <h2>Seja bem vindo ao GreenLife</h2>
+        <br>
+        <h1>Bem-vindo ao Sistema de Auxílio ao Plantio!</h1>
+        <Br><br><br>
+        <p>
+            Estamos muito felizes em tê-lo conosco. Nosso sistema foi desenvolvido para oferecer suporte completo aos agricultores, desde o planejamento até a colheita, com foco na sustentabilidade e na eficiência.
+            
+            Aqui, você encontrará ferramentas para ajudá-lo a escolher as melhores culturas para plantar, considerando fatores como clima, tipo de solo e rotação de culturas. Além disso, oferecemos uma visão geral e intuitiva de todos os dados relevantes, como uso de recursos, desempenho das culturas e condições ambientais, facilitando a tomada de decisões.
+            
+            Disponibilizamos também uma vasta base de conhecimento com artigos e guias detalhados para resolver dúvidas e problemas específicos, diretamente no site. Nossos relatórios detalhados sobre o desempenho das culturas ajudarão você a tomar decisões informadas para futuras safras.
+            
+            Nosso objetivo é empoderar os agricultores com tecnologia de ponta, facilitando o manejo das plantações e contribuindo para uma agricultura mais eficiente e sustentável.
+            
+            Agradecemos por escolher nosso sistema e esperamos que ele seja uma ferramenta valiosa para o seu sucesso agrícola. Se precisar de ajuda ou tiver alguma dúvida, nossa equipe está sempre à disposição para assisti-lo.</p>
+            
+    </section>
+    <section class="content-section section-2" data-aos="fade-up">
+        <br>
+        <h2>Serviços</h2>
+        <h3>Dashboard:</h3>
+        <p>Oferece uma visão geral e intuitiva das informações mais importantes relacionadas às culturas e ao uso dos recursos. O dashboard facilita o acompanhamento de indicadores-chave, como o desempenho das culturas e as condições ambientais, tornando mais fácil para o agricultor tomar decisões informadas.</p>
+        <h3>Textos de Ajuda no Próprio Site:</h3>
+        <p>Disponibiliza uma ampla gama de artigos e guias detalhados diretamente no site. Esses textos são projetados para resolver dúvidas e problemas específicos que possam surgir, oferecendo suporte prático e fácil acesso a informações úteis.</p>
+        <h3>Relatórios e Análises: </h3>
+        <p> relatórios detalhados sobre o desempenho das culturas. Esses relatórios permitem que os agricultores avaliem a eficácia de suas práticas atuais e ajustem suas estratégias para futuras safras, com base em dados concretos e análises aprofundadas.</p><br>
+    </section>
+    <section class="content-section section-3" data-aos="fade-up">
+        <div class="contact">
+            <div id="container">
+                <br>
+              <h2>Contato</h2>
+              <form action="#" method="post" id="contact_form">
+                <div class="name">
+                  <label for="name"></label>
+                  <input type="text" placeholder="Nome" name="name" id="name_input" required>
+                </div>
+                <div class="email">
+                  <label for="email"></label>
+                  <input type="email" placeholder="E-mail" name="email" id="email_input" required>
+                </div>
+                <div class="subject">
+                  <label for="subject"></label>
+                  <select placeholder="Assunto" name="subject" id="subject_input" required>
+                    <option disabled hidden selected>subject</option>
+                    <option>Coisas que podem melhorar</option>
+                    <option>Pergunta rápida</option>
+                    <option>Agradecimentos</option>
+                    <option>Outros...</option>
+                  </select>
+                </div>
+                <div class="message">
+                  <label for="message"></label>
+                  <textarea name="message" placeholder="Mensagem" id="message_input" cols="30" rows="5" required></textarea>
+                </div>
+                <div class="submit">
+                  <input type="submit" value="submit" id="form_button"/>
+                </div>
+              </form>
+            </div>
+            </div>
+        
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="./js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.sales{
+    width: 300px;
+    position: absolute;
+    top:0%;
+    left:22%;
+}
+.expenses{
+    width: 300px;
+   
+    position: absolute;
+    top:0%;
+    left:48%;
+
+}
+
+.status{
+    width: 300px;
+    position: absolute;
+    top:10%;
+    left:74%;
+}
+.tema {
+    position: absolute;
+    top:0%;
+    left:80%;
+}
+

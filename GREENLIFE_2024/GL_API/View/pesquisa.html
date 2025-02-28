@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../View/css/pesquisa.css">
+
+    <link rel="stylesheet" href="../View/css/form.css">
+    <title>GreenLife</title>
+</head>
+<style>
+/* Estilo base para o conteúdo de ajuda */
+main {
+    font-size: 0.88rem;
+    padding: 20px;
+    background-color: #f9f9f900;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em linha conforme o espaço */
+    gap: 20px;
+    justify-content: center;
+}
+/* Estilo para cada "cartão" de ajuda */
+.section {
+    flex: 1 1 300px; /* Responsividade para os cartões, mínimo de 300px */
+    max-width: 100%;
+    padding: 15px;
+    background-color: #ffffff00;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de destaque ao passar o mouse sobre o "cartão" */
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+    font-size: 0.88rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin-top: 10px;
+    border-left: 4px solid #27ae60;
+    padding-left: 10px;
+}
+
+.section p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Ajuste do layout em telas menores */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .section h2 {
+        font-size: 1.25em;
+    }
+    
+    .section p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2 {
+        font-size: 1.1em;
+    }
+
+    .section p {
+        font-size: 0.85em;
+    }
+}
+</style>
+<!-- Right Section Start -->
+<div class="right">
+    <div class="top">
+        <button id="menu_bar">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="theme-toggler">
+            <span class="active"><i class='bx bx-sun'></i></span>
+            <span><i class='bx bx-moon'></i></span>
+        </div>
+        <div class="profile">
+            <div class="info">
+                <p><b>GreenLife</b></p>
+                <p>Usuário</p>
+                <small class="text-muted"></small>
+            </div>
+            <div class="profile-photo">
+                <img src="img/icon.jpg" alt="Profile Photo">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Right Section End -->
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2>GREEN<span class="danger">LIFE</span></h2>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="Plantio.html">
+                    <span class="material-symbols-outlined">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="pesquisa.html" class="active">
+                    <span class="material-symbols-outlined">search</span>
+                    <h3>Pesquisar</h3>
+                </a>
+                <a href="ajuda.html">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                    <h3>Ajuda</h3>
+                </a>
+                <a href="adicionar.html">
+                    <span class="material-symbols-outlined">edit</span>
+                    <h3>Adicionar</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- Aside End -->
+
+        <!-- Main Section Start -->
+        <main>
+          
+            <div class="insights">
+                <!-- start sales -->
+                <!-- end sales -->
+
+                <!-- start expenses -->
+                <!-- end expenses -->
+
+                <!-- start status --> 
+                <!-- Definir uso para essa div -->
+                <!-- end status -->
+            </div>
+           
+            <!-- end insights -->
+
+            <!-- start recent order -->
+      
+            <div class="recent_order">
+            <center>
+                <h1>Faça sua pesquisa</h1>
+              <div class="search-container">
+                  <span class="material-symbols-outlined search-icon">search</span>
+                    <input class="pesquisa" type="text" id="searchInput" placeholder="Buscar Plantio">
+                    <button type="button" id="searchButton">Pesquisar</button>
+                </div>
+            </center>  
+                <!-- Contêiner para resultados da pesquisa -->
+                <div id="resultados" class="resultados-container"></div>
+                <div class="section">
+                    <h2>Importância</h2>
+                    Com uma simples pesquisa você pode mudar o rumo do seu plantio ou horta, obtendo as informações necessárias para casa tipo de hortaliça, vegetal ou fruta.
+                </div>
+            </div>
+            <!-- end recent order -->
+         
+        </main>
+       
+     
+        
+    </div>
+
+    <script src="js/plantio.js"></script>
+    <script src="js/pesquisa.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.querySelector('.theme-toggler');
+    
+            // Verifique o localStorage ao carregar a página
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme-variables');
+                themeToggle.querySelector('.bx-moon').parentElement.classList.add('active');
+                themeToggle.querySelector('.bx-sun').parentElement.classList.remove('active');
+            }
+    
+            // Altere o tema e salve a preferência do usuário no localStorage
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme-variables');
+    
+                const spans = themeToggle.querySelectorAll('span');
+                spans.forEach(span => span.classList.toggle('active'));
+    
+                // Salva a preferência do tema no localStorage
+                if (document.body.classList.contains('dark-theme-variables')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
